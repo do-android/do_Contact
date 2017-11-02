@@ -1,0 +1,110 @@
+{
+  "ID": "do_Contact",
+  "IsContainer": "0",
+  "Type": "SM",
+  "Name": "通讯录",
+  "Version": "Internal",
+  "Description": "针对通讯录的增删查改",
+  "Icon": "",
+  "IOS": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Android": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [],
+  "Events": [],
+  "syncMethodes": [
+    {
+      "ID": "addData",
+      "Name": "添加联系人信息",
+      "Description": "",
+      "ReturnType": "Node",
+      "ReturnDesc": "返回添加联系人的唯一标识",
+      "Paras": [
+        {
+          "ID": "paras",
+          "Name": "参数值",
+          "Type": "Node",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "如：[{'name':'张三','phone':'13922864549','email':'xxx@deviceone.com'}]，目前支持的字段名称有：name(姓名)，phone(电话)，email(邮箱)"
+        }
+      ]
+    },
+    {
+      "ID": "deleteData",
+      "Name": "删除联系人信息",
+      "Description": "",
+      "ReturnType": "Bool",
+      "ReturnDesc": "true：成功，false：失败",
+      "Paras": [
+        {
+          "ID": "paras",
+          "Name": "参数值",
+          "Type": "Node",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "如：[{'id':'1001','name':'张三','phone':'13922864549','email':'xxx@deviceone.com'}]，目前支持的字段名称有：id(唯一标识)，name(姓名)，phone(电话)，email(邮箱)"
+        }
+      ]
+    },
+    {
+      "ID": "getData",
+      "Name": "获取通讯录联系人信息",
+      "Description": "获取通讯录联系人信息，如果参数为空，就获取所有联系人信息",
+      "ReturnType": "Node",
+      "ReturnDesc": "根据参数值，返回查询的联系人信息列表，[{'id':'1001','name':'','phone':[phone1,phone2...],'email':''...},{'id':'1002','name':'','phone':[phone1,phone2...],'email':''...}...]",
+      "Paras": [
+        {
+          "ID": "paras",
+          "Name": "参数值",
+          "Type": "Node",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "可以根据单个条件{'id':'1001'}来查询所有'id'为'1001'的联系人，也可以根据多个条件组合{'name':'张三','phone':'13922864549'}来模糊查询，目前支持的字段名称有：id(唯一标识)，name(姓名)，phone(电话)，email(电子邮箱)"
+        }
+      ]
+    },
+    {
+      "ID": "updateData",
+      "Name": "修改联系人信息",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": [
+        {
+          "ID": "id",
+          "Name": "唯一标识",
+          "Type": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "要修改联系人的唯一标识"
+        },
+        {
+          "ID": "paras",
+          "Name": "参数值",
+          "Type": "Node",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "如：[{'name':'张三','phone':'13922864549','email':'xxx@deviceone.com'}]，目前支持的字段名称有：name(姓名)，phone(电话)，email(邮箱)"
+        }
+      ]
+    }
+  ],
+  "asyncMethodes": []
+}
